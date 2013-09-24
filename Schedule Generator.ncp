@@ -1,0 +1,583 @@
+<Project>
+  <Name>Schedule Generator</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Diagram 1</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Professor</Name>
+        <Access>Public</Access>
+        <Location left="1048" top="674" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private MySchedule mySchedule</Member>
+        <Member type="Field">private Schedule schedule</Member>
+        <Member type="Field">private Department department</Member>
+        <Member type="Field">private int idProfesor</Member>
+        <Member type="Constructor">public Professor(String name, String firstLastname, String secondLastName, int id, String password, MySchedule mySchedule, Schedule schedule, Department departmen, ind idProfessor)</Member>
+        <Member type="Method">public MySchedule getMySchedule()</Member>
+        <Member type="Method">public void setMySchedule(MySchedule mySchedule)</Member>
+        <Member type="Method">public Schedule getSchedule()</Member>
+        <Member type="Method">public void setSchedule(Schedule schedule)</Member>
+        <Member type="Method">public Department getDepartment()</Member>
+        <Member type="Method">public void setDepartment(Department department)</Member>
+        <Member type="Method">public int getIdProfessor()</Member>
+        <Member type="Method">public void setIdProfessor(int idProfessor)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Department</Name>
+        <Access>Public</Access>
+        <Location left="569" top="1040" />
+        <Size width="181" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Constructor">public Department(String name)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Subject</Name>
+        <Access>Public</Access>
+        <Location left="1255" top="1492" />
+        <Size width="205" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private int numberOfCredit</Member>
+        <Member type="Constructor">protected Subject(String name, int numberOfCredit)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Member type="Method">public int getNumberOfCredit()</Member>
+        <Member type="Method">public void setNumberOfCredit(int numberOfCredit)</Member>
+        <Member type="Method">public int calculatingHoursDedicated()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Theoretical</Name>
+        <Access>Public</Access>
+        <Location left="1104" top="1761" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String website</Member>
+        <Member type="Constructor">public Theoretical(String name, int numberOfCredit, String website)</Member>
+        <Member type="Method">public String getWebsite()</Member>
+        <Member type="Method">public void setWebsite(String website)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Practice</Name>
+        <Access>Public</Access>
+        <Location left="1440" top="1721" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String[] supportMaterial</Member>
+        <Member type="Field">private String[] operatingSystem</Member>
+        <Member type="Constructor">public Practice(String name, int numberOfCredit, String[] supportMaterial, String[] operatingSystem)</Member>
+        <Member type="Method">public String[] getSupportMaterial()</Member>
+        <Member type="Method">public void setSupportMaterial(String[] supportMaterial)</Member>
+        <Member type="Method">public String getSupportMaterial(String name)</Member>
+        <Member type="Method">public void setSupportMaterial(String supportMaterial)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Classroom</Name>
+        <Access>Public</Access>
+        <Location left="1881" top="1415" />
+        <Size width="200" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private int numberOfClassroom</Member>
+        <Member type="Field">private String location</Member>
+        <Member type="Field">private int capacity</Member>
+        <Member type="Constructor">protected Classroom(String name, int numberOfClassroom, String location, int capacity)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Member type="Method">public int getNumberOfClassrom()</Member>
+        <Member type="Method">public void setNumberOfClassrom(int numberOfClassrom)</Member>
+        <Member type="Method">public String getLocation()</Member>
+        <Member type="Method">public void setLocation(String location)</Member>
+        <Member type="Method">public int getCapacity()</Member>
+        <Member type="Method">public void setCapacity(int capacity)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TheoreticalClass</Name>
+        <Access>Public</Access>
+        <Location left="1693" top="1730" />
+        <Size width="170" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private boolean airConditioning</Member>
+        <Member type="Field">private boolean multimedia</Member>
+        <Member type="Constructor">public TheoreticalClass(String name, int numberOfClassroom, String location, int capacity, boolean airConditioning, boolean multimedia)</Member>
+        <Member type="Method">public boolean getAirConditioning()</Member>
+        <Member type="Method">public void setAirConditioning(boolean airConditioning)</Member>
+        <Member type="Method">public boolean getMultimedia()</Member>
+        <Member type="Method">public void setMultimedia(boolean multimedia)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PracticeClass</Name>
+        <Access>Public</Access>
+        <Location left="2102" top="1712" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int numberOfComputer</Member>
+        <Member type="Field">private int numberOfComputerAvailable</Member>
+        <Member type="Constructor">public PracticeClass(String name, int numberOfClassroom, String location, int capacity, int numberOfComputer, int numberOfComputerAvailable)</Member>
+        <Member type="Method">public int getNumberOfComputer()</Member>
+        <Member type="Method">public void setNumberOfComputer(int numberOfComputer)</Member>
+        <Member type="Method">public int getNumberOfComputerAvailable()</Member>
+        <Member type="Method">public void setNumberOfComputerAvailable(int numberOfComputerAvailable)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MySchedule</Name>
+        <Access>Public</Access>
+        <Location left="1048" top="1040" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String day</Member>
+        <Member type="Field">private String hourInicial</Member>
+        <Member type="Field">private String hourFinal</Member>
+        <Member type="Field">private int semester</Member>
+        <Member type="Field">private Subject course</Member>
+        <Member type="Constructor">public MySchedule(String day, String hourInicial, String hourFinal, int semester, Subject course)</Member>
+        <Member type="Method">public String getDay()</Member>
+        <Member type="Method">public void setDay(String day)</Member>
+        <Member type="Method">public String getHourInicial()</Member>
+        <Member type="Method">public void setHourInicial(String hourInicial)</Member>
+        <Member type="Method">public String getHourFinal()</Member>
+        <Member type="Method">public void setHourFinal(String hourFinal)</Member>
+        <Member type="Method">public int getSemester()</Member>
+        <Member type="Method">public void setSemester(int semester)</Member>
+        <Member type="Method">public Subject getCourse()</Member>
+        <Member type="Method">public void setCourse(Subject course)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SubjectAsigned</Name>
+        <Access>Public</Access>
+        <Location left="866" top="1470" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int semester</Member>
+        <Member type="Field">private Subject subject</Member>
+        <Member type="Constructor">public SubjectAsigned(int semester, Subject subject)</Member>
+        <Member type="Method">public int getSemester()</Member>
+        <Member type="Method">public void setSemester(int semester)</Member>
+        <Member type="Method">public Subject getSubject()</Member>
+        <Member type="Method">public void setSubject(Subject subject)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Schedule</Name>
+        <Access>Public</Access>
+        <Location left="1564" top="1040" />
+        <Size width="162" height="400" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String day</Member>
+        <Member type="Field">private String hourInicial</Member>
+        <Member type="Field">private String hourFinal</Member>
+        <Member type="Field">private int semester</Member>
+        <Member type="Field">private Subject course</Member>
+        <Member type="Field">private Classroom classroom</Member>
+        <Member type="Constructor">public Schedule(String day, String hourInicial, String hourFinal, int semester, Subject course, Classroom classroom)</Member>
+        <Member type="Method">public String getDay()</Member>
+        <Member type="Method">public void setDay(String day)</Member>
+        <Member type="Method">public String getHourInicial()</Member>
+        <Member type="Method">public void setHourInicial(String hourInicial)</Member>
+        <Member type="Method">public String getHourFinal()</Member>
+        <Member type="Method">public void setHourFinal(String hourFinal)</Member>
+        <Member type="Method">public int getSemester()</Member>
+        <Member type="Method">public void setSemester(int semester)</Member>
+        <Member type="Method">public Subject getCourse()</Member>
+        <Member type="Method">public void setCourse(Subject course)</Member>
+        <Member type="Method">public Classroom getClassroom()</Member>
+        <Member type="Method">public void setClassroom(Classroom classroom)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Person</Name>
+        <Access>Public</Access>
+        <Location left="979" top="10" />
+        <Size width="299" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private String firstLastName</Member>
+        <Member type="Field">private String secondLastName</Member>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">private String password</Member>
+        <Member type="Constructor">protected Person(String name, String firstLastname, String secondLastName, int id, String password)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Member type="Method">public String getFirstLastName()</Member>
+        <Member type="Method">public void setFirstLastName(String firstLastName)</Member>
+        <Member type="Method">public String getSecondLastName()</Member>
+        <Member type="Method">public void setSecondLastName(String secondLastName)</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public void setId(int id)</Member>
+        <Member type="Method">public String getPassword()</Member>
+        <Member type="Method">public void setPassword(String password)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Student</Name>
+        <Access>Public</Access>
+        <Location left="676" top="464" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int carnet</Member>
+        <Member type="Constructor">public Student(String name, String firstLastname, String secondLastName, int id, String password, int carnet)</Member>
+        <Member type="Method">public int getCarnet()</Member>
+        <Member type="Method">public void setCarnet(int carnet)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Principal</Name>
+        <Access>Public</Access>
+        <Location left="1396" top="485" />
+        <Size width="166" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int yearsInManage</Member>
+        <Member type="Constructor">public Principal(String name, String firstLastname, String secondLastName, int id, String password, int yearsInManage)</Member>
+        <Member type="Method">public int getYearsInManage()</Member>
+        <Member type="Method">public void setYearsInManage(int yearsInManage)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="3" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1181</X>
+          <Y>1689</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1521</X>
+          <Y>1696</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1788</X>
+          <Y>1540</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2180</X>
+          <Y>1502</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>894</X>
+          <Y>719</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>645</X>
+          <Y>1015</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>have</StartRole>
+        <EndRole>belongs to a</EndRole>
+        <StartMultiplicity>1..*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1129</X>
+          <Y>1003</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1129</X>
+          <Y>998</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>belongs to a</StartRole>
+        <EndRole>have</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="8" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1343</X>
+          <Y>1150</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1343</X>
+          <Y>1467</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>is</StartRole>
+        <EndRole>have</EndRole>
+        <StartMultiplicity>0..*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>891</X>
+          <Y>786</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>836</X>
+          <Y>1621</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>imparted by a</StartRole>
+        <EndRole>have asigned</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="9" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>is asigned</StartRole>
+        <EndRole>have</EndRole>
+        <StartMultiplicity>0..*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1420</X>
+          <Y>1403</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1503</X>
+          <Y>1149</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>have</StartRole>
+        <EndRole>is</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1786</X>
+          <Y>1144</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>have</StartRole>
+        <EndRole>is</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1500</X>
+          <Y>786</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1645</X>
+          <Y>1015</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>belongs to a</StartRole>
+        <EndRole>have</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="12" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1129</X>
+          <Y>413</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="13" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1129</X>
+          <Y>393</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="0" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Diagram 2</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PracticeClass</Name>
+        <Access>Public</Access>
+        <Location left="1817" top="155" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int numberOfComputer</Member>
+        <Member type="Field">private int numberOfComputerAvailable</Member>
+        <Member type="Constructor">public PracticeClass(String name, int numberOfClassroom, String location, int capacity, int numberOfComputer, int numberOfComputerAvailable)</Member>
+        <Member type="Method">public int getNumberOfComputer()</Member>
+        <Member type="Method">public void setNumberOfComputer(int numberOfComputer)</Member>
+        <Member type="Method">public int getNumberOfComputerAvailable()</Member>
+        <Member type="Method">public void setNumberOfComputerAvailable(int numberOfComputerAvailable)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Classroom</Name>
+        <Access>Public</Access>
+        <Location left="1557" top="49" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private int numberOfClassroom</Member>
+        <Member type="Field">private String location</Member>
+        <Member type="Field">private int capacity</Member>
+        <Member type="Constructor">protected Classroom(String name, int numberOfClassroom, String location, int capacity)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Member type="Method">public int getNumberOfClassrom()</Member>
+        <Member type="Method">public void setNumberOfClassrom(int numberOfClassrom)</Member>
+        <Member type="Method">public String getLocation()</Member>
+        <Member type="Method">public void setLocation(String location)</Member>
+        <Member type="Method">public int getCapacity()</Member>
+        <Member type="Method">public void setCapacity(int capacity)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TheoreticalClass</Name>
+        <Access>Public</Access>
+        <Location left="1286" top="155" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private boolean airConditioning</Member>
+        <Member type="Field">private boolean multimedia</Member>
+        <Member type="Constructor">public TheoreticalClass(String name, int numberOfClassroom, String location, int capacity, boolean airConditioning, boolean multimedia)</Member>
+        <Member type="Method">public boolean getAirConditioning()</Member>
+        <Member type="Method">public void setAirConditioning(boolean airConditioning)</Member>
+        <Member type="Method">public boolean getMultimedia()</Member>
+        <Member type="Method">public void setMultimedia(boolean multimedia)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Practice</Name>
+        <Access>Public</Access>
+        <Location left="978" top="310" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String[] supportMaterial</Member>
+        <Member type="Field">private String[] operatingSystem</Member>
+        <Member type="Constructor">public Practice(String[] supportMaterial, String[] operatingSystem)</Member>
+        <Member type="Method">public String[] getSupportMaterial()</Member>
+        <Member type="Method">public void setSupportMaterial(String[] supportMaterial)</Member>
+        <Member type="Method">public String getSupportMaterial(String name)</Member>
+        <Member type="Method">public void setSupportMaterial(String supportMaterial)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Theoretical</Name>
+        <Access>Public</Access>
+        <Location left="589" top="310" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String website</Member>
+        <Member type="Constructor">public Theoretical(String name, int numberOfCredit, String website)</Member>
+        <Member type="Method">public String getWebsite()</Member>
+        <Member type="Method">public void setWebsite(String website)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Subject</Name>
+        <Access>Public</Access>
+        <Location left="742" top="53" />
+        <Size width="205" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private int numberOfCredit</Member>
+        <Member type="Constructor">protected Subject(String name, int numberOfCredit)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Member type="Method">public int getNumberOfCredit()</Member>
+        <Member type="Method">public void setNumberOfCredit(int numberOfCredit)</Member>
+        <Member type="Method">public int calculatingHoursDedicated()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Department</Name>
+        <Access>Public</Access>
+        <Location left="437" top="53" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Constructor">public Department(String name)</Member>
+        <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void setName(String name)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Professor</Name>
+        <Access>Public</Access>
+        <Location left="104" top="53" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String name</Member>
+        <Member type="Field">private int idCard</Member>
+        <Member type="Field">private Schedule schedule</Member>
+        <Member type="Field">private Department department</Member>
+        <Member type="Constructor">public Professor()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="2" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1059</X>
+          <Y>285</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
