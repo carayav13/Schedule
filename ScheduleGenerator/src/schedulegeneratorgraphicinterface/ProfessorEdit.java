@@ -9,6 +9,7 @@
  * Created on 24-sep-2013, 19:20:26
  */
 package schedulegeneratorgraphicinterface;
+import schedulegeneratorclass.*;
 
 /**
  *
@@ -20,6 +21,8 @@ public class ProfessorEdit extends javax.swing.JFrame {
     public ProfessorEdit() {
         initComponents();
     }
+    
+public Professor professor = null;    
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -30,21 +33,216 @@ public class ProfessorEdit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jTabbedPaneProfessorEdit = new javax.swing.JTabbedPane();
+        jPanelProfessorInformation = new javax.swing.JPanel();
+        jPanelInformationContainer = new javax.swing.JPanel();
+        jLabelInformationDepartment = new javax.swing.JLabel();
+        jLabelInformationName = new javax.swing.JLabel();
+        jLabelInformationFirstLastname = new javax.swing.JLabel();
+        jLabelInformationSecondLastName = new javax.swing.JLabel();
+        jLabelInformationIDCard = new javax.swing.JLabel();
+        jLabelInformationIDProfessor = new javax.swing.JLabel();
+        jLabelInformationSetName = new javax.swing.JLabel();
+        jLabelInformationSetFirstName = new javax.swing.JLabel();
+        jLabelInformationSetSecondLastName = new javax.swing.JLabel();
+        jLabelInformationSetIDCard = new javax.swing.JLabel();
+        jLabelInformationSetIDProfessor = new javax.swing.JLabel();
+        jLabelInformationSetDepartment = new javax.swing.JLabel();
+        jButtonInformationUpdate = new javax.swing.JButton();
+        jPanelProfessorSubjectAssigned = new javax.swing.JPanel();
+        jPanelProfessorMySchedule = new javax.swing.JPanel();
+        jPanelSuggestSchedule = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Profesor Edit");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPaneProfessorEdit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTabbedPaneProfessorEdit.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+
+        jPanelProfessorInformation.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jPanelInformationContainer.setBorder(javax.swing.BorderFactory.createTitledBorder("Information"));
+        jPanelInformationContainer.setToolTipText("");
+        jPanelInformationContainer.setName(""); // NOI18N
+
+        jLabelInformationDepartment.setText("Department:");
+
+        jLabelInformationName.setText("Name:");
+
+        jLabelInformationFirstLastname.setText("First Lastname:");
+
+        jLabelInformationSecondLastName.setText("Second Lastname:");
+
+        jLabelInformationIDCard.setText("ID Card:");
+
+        jLabelInformationIDProfessor.setText("ID Professor:");
+
+        jButtonInformationUpdate.setText("Upadate Information");
+        jButtonInformationUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInformationUpdateActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelInformationContainerLayout = new javax.swing.GroupLayout(jPanelInformationContainer);
+        jPanelInformationContainer.setLayout(jPanelInformationContainerLayout);
+        jPanelInformationContainerLayout.setHorizontalGroup(
+            jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelInformationName)
+                    .addComponent(jLabelInformationFirstLastname)
+                    .addComponent(jLabelInformationSecondLastName)
+                    .addComponent(jLabelInformationIDCard)
+                    .addComponent(jLabelInformationIDProfessor)
+                    .addComponent(jLabelInformationDepartment))
+                .addGap(37, 37, 37)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                        .addComponent(jLabelInformationSetDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                            .addComponent(jLabelInformationSetIDProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelInformationSetSecondLastName, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                                    .addComponent(jLabelInformationSetFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                                    .addComponent(jLabelInformationSetName, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
+                                .addGap(26, 26, 26))
+                            .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                                .addComponent(jLabelInformationSetIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInformationContainerLayout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addComponent(jButtonInformationUpdate)
+                .addGap(112, 112, 112))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanelInformationContainerLayout.setVerticalGroup(
+            jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelInformationName)
+                    .addComponent(jLabelInformationSetName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelInformationFirstLastname)
+                    .addComponent(jLabelInformationSetFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelInformationSecondLastName)
+                    .addComponent(jLabelInformationSetSecondLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelInformationIDCard)
+                    .addComponent(jLabelInformationSetIDCard, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelInformationContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                        .addComponent(jLabelInformationIDProfessor)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelInformationDepartment))
+                    .addGroup(jPanelInformationContainerLayout.createSequentialGroup()
+                        .addComponent(jLabelInformationSetIDProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelInformationSetDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonInformationUpdate)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        javax.swing.GroupLayout jPanelProfessorInformationLayout = new javax.swing.GroupLayout(jPanelProfessorInformation);
+        jPanelProfessorInformation.setLayout(jPanelProfessorInformationLayout);
+        jPanelProfessorInformationLayout.setHorizontalGroup(
+            jPanelProfessorInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelProfessorInformationLayout.createSequentialGroup()
+                .addGap(203, 203, 203)
+                .addComponent(jPanelInformationContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(271, Short.MAX_VALUE))
+        );
+        jPanelProfessorInformationLayout.setVerticalGroup(
+            jPanelProfessorInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelProfessorInformationLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelInformationContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPaneProfessorEdit.addTab("Information", jPanelProfessorInformation);
+
+        jPanelProfessorSubjectAssigned.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jPanelProfessorSubjectAssignedLayout = new javax.swing.GroupLayout(jPanelProfessorSubjectAssigned);
+        jPanelProfessorSubjectAssigned.setLayout(jPanelProfessorSubjectAssignedLayout);
+        jPanelProfessorSubjectAssignedLayout.setHorizontalGroup(
+            jPanelProfessorSubjectAssignedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 849, Short.MAX_VALUE)
+        );
+        jPanelProfessorSubjectAssignedLayout.setVerticalGroup(
+            jPanelProfessorSubjectAssignedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 304, Short.MAX_VALUE)
+        );
+
+        jTabbedPaneProfessorEdit.addTab("Subjects Assigned", jPanelProfessorSubjectAssigned);
+
+        jPanelProfessorMySchedule.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jPanelProfessorMyScheduleLayout = new javax.swing.GroupLayout(jPanelProfessorMySchedule);
+        jPanelProfessorMySchedule.setLayout(jPanelProfessorMyScheduleLayout);
+        jPanelProfessorMyScheduleLayout.setHorizontalGroup(
+            jPanelProfessorMyScheduleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 849, Short.MAX_VALUE)
+        );
+        jPanelProfessorMyScheduleLayout.setVerticalGroup(
+            jPanelProfessorMyScheduleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 304, Short.MAX_VALUE)
+        );
+
+        jTabbedPaneProfessorEdit.addTab("My Schedule", jPanelProfessorMySchedule);
+
+        jPanelSuggestSchedule.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jPanelSuggestScheduleLayout = new javax.swing.GroupLayout(jPanelSuggestSchedule);
+        jPanelSuggestSchedule.setLayout(jPanelSuggestScheduleLayout);
+        jPanelSuggestScheduleLayout.setHorizontalGroup(
+            jPanelSuggestScheduleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 849, Short.MAX_VALUE)
+        );
+        jPanelSuggestScheduleLayout.setVerticalGroup(
+            jPanelSuggestScheduleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 304, Short.MAX_VALUE)
+        );
+
+        jTabbedPaneProfessorEdit.addTab("Suggest Schedule", jPanelSuggestSchedule);
+
+        getContentPane().add(jTabbedPaneProfessorEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 338));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * 
+     * @param evt 
+     */
+private void jButtonInformationUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInformationUpdateActionPerformed
+
+    
+}//GEN-LAST:event_jButtonInformationUpdateActionPerformed
+
+public void setFields () {
+    jLabelInformationSetName.setText(professor.getName());
+    jLabelInformationSetFirstName.setText(professor.getFirstLastName());
+    jLabelInformationSecondLastName.setText(professor.getSecondLastName());
+    jLabelInformationSetIDCard.setText(String.valueOf(professor.getId()));
+    jLabelInformationSetIDProfessor.setText(String.valueOf(professor.getIdProfessor()));
+    jLabelInformationSetDepartment.setText(professor.getDepartment().getName());
+    
+}
 
     /**
      * @param args the command line arguments
@@ -82,5 +280,24 @@ public class ProfessorEdit extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonInformationUpdate;
+    private javax.swing.JLabel jLabelInformationDepartment;
+    private javax.swing.JLabel jLabelInformationFirstLastname;
+    private javax.swing.JLabel jLabelInformationIDCard;
+    private javax.swing.JLabel jLabelInformationIDProfessor;
+    private javax.swing.JLabel jLabelInformationName;
+    private javax.swing.JLabel jLabelInformationSecondLastName;
+    private javax.swing.JLabel jLabelInformationSetDepartment;
+    private javax.swing.JLabel jLabelInformationSetFirstName;
+    private javax.swing.JLabel jLabelInformationSetIDCard;
+    private javax.swing.JLabel jLabelInformationSetIDProfessor;
+    private javax.swing.JLabel jLabelInformationSetName;
+    private javax.swing.JLabel jLabelInformationSetSecondLastName;
+    private javax.swing.JPanel jPanelInformationContainer;
+    private javax.swing.JPanel jPanelProfessorInformation;
+    private javax.swing.JPanel jPanelProfessorMySchedule;
+    private javax.swing.JPanel jPanelProfessorSubjectAssigned;
+    private javax.swing.JPanel jPanelSuggestSchedule;
+    private javax.swing.JTabbedPane jTabbedPaneProfessorEdit;
     // End of variables declaration//GEN-END:variables
 }

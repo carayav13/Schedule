@@ -9,47 +9,46 @@ package schedulegeneratorclass;
  * @author Carlos
  */
 public class Professor extends Person {
-        private MySchedule mySchedule;
-	private Schedule schedule;
-	private Department department;
+        private MySchedule mySchedule=null;
+	private Schedule schedule=null;
+	private Department department=null;
 	private int idProfesor;
 
 	public Professor(String name, String firstLastname, String secondLastName, 
-                int id, String password, MySchedule mySchedule, Schedule schedule, 
-                Department department, int idProfessor) {
+                int id, String password,int idProfessor) {
             super(name,firstLastname,secondLastName,id,password);
-            throw new UnsupportedOperationException("The method is not implemented yet.");
+            this.idProfesor = idProfessor;
 	}
 
 	public MySchedule getMySchedule() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return this.mySchedule;
 	}
 
 	public void setMySchedule(MySchedule mySchedule) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.mySchedule = mySchedule;
 	}
 
 	public Schedule getSchedule() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return this.schedule;
 	}
 
 	public void setSchedule(Schedule schedule) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.schedule = schedule;
 	}
 
 	public Department getDepartment() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return this.department;
 	}
 
 	public void setDepartment(Department department) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.department = department;
 	}
 
 	public int getIdProfessor() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return this.idProfesor;
 	}
 
 	public void setIdProfessor(int idProfessor) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.idProfesor = idProfessor;
 	}    
 }

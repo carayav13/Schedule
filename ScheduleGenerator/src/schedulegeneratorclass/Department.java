@@ -11,15 +11,28 @@ package schedulegeneratorclass;
 public class Department {
         private String name;
 
+        /**
+         * Constructor of Deparment class
+         * @param name is a String.
+         */
 	public Department(String name) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            this.name = name;
+            
 	}
-
+        
+        /**
+         * Get the name of a department
+         * @return a data of type String
+         */
 	public String getName() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            return this.name;
 	}
-
+        
+        /**
+         * Set a name of Department class
+         * @param name is String
+         */
 	public void setName(String name) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.name = name;
 	}    
 }

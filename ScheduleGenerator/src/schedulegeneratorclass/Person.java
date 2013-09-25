@@ -16,47 +16,58 @@ public abstract  class Person {
 	private String password;
 
 	protected Person(String name, String firstLastname, String secondLastName, int id, String password) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		
+            this.name = name;
+            this.firstLastName = firstLastname;
+            this.secondLastName = secondLastName;
+            this.id = id;
+            this.password = password;
+                
 	}
 
 	public String getName() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            return this.name;
+            
 	}
 
 	public void setName(String name) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            this.name = name;
+            
 	}
 
 	public String getFirstLastName() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            return this.firstLastName;
 	}
 
 	public void setFirstLastName(String firstLastName) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            this.firstLastName = firstLastName;
+            
 	}
 
 	public String getSecondLastName() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            return this.secondLastName;
+            
 	}
 
 	public void setSecondLastName(String secondLastName) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.secondLastName = secondLastName;
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return this.id;
 	}
 
 	public void setId(int id) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.id =id;
 	}
 
 	public String getPassword() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            return this.password;
+            
 	}
 
 	public void setPassword(String password) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            this.password = password;
 	}
     
 }
