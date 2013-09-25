@@ -8,46 +8,45 @@ package schedulegeneratorclass;
  *
  * @author Carlos
  */
-public class Professor extends Person {
-        private MySchedule mySchedule;
-	private Schedule schedule;
-	private Department department;
-	private int idProfesor;
+public abstract class Classroom {
+        private String name;
+	private int numberOfClassroom;
+	private String location;
+	private int capacity;
 
-	public Professor(String name, String firstLastname, String secondLastName, int id, String password, MySchedule mySchedule, Schedule schedule, Department departmen, int idProfessor) {
-            super(name,firstLastname,secondLastName,id,password);
-            throw new UnsupportedOperationException("The method is not implemented yet.");
-	}
-
-	public MySchedule getMySchedule() {
+	protected Classroom(String name, int numberOfClassroom, String location, int capacity) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public void setMySchedule(MySchedule mySchedule) {
+	public String getName() {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public Schedule getSchedule() {
+	public void setName(String name) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public void setSchedule(Schedule schedule) {
+	public int getNumberOfClassrom() {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public Department getDepartment() {
+	public void setNumberOfClassrom(int numberOfClassrom) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public void setDepartment(Department department) {
+	public String getLocation() {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public int getIdProfessor() {
+	public void setLocation(String location) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public void setIdProfessor(int idProfessor) {
+	public int getCapacity() {
+		throw new UnsupportedOperationException("The method is not implemented yet.");
+	}
+
+	public void setCapacity(int capacity) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}    
 }
