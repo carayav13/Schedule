@@ -16,7 +16,7 @@ public class Professor extends Person {
 
 	public Professor(String name, String firstLastname, String secondLastName, 
                 int id, String password, MySchedule mySchedule, Schedule schedule, 
-                Department departmen, int idProfessor) {
+                Department department, int idProfessor) {
             super(name,firstLastname,secondLastName,id,password);
             throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
